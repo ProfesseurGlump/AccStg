@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\usepackage[a4paper, dvips]{geometry}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{polyglossia}
+
+\setmainlanguage{french}
+
+\begin{document}
+
+Bonjour à toutes et à tous,
+
+ voici un questionnaire que j'ai réalisé afin d'essayer de découvrir
+ la perception des mathématiques chez les élèves. 
+Il n'y a aucune obligation à le faire, il n'y a ni bonne ni mauvaise réponse.
+Le but est simplement d'essayer de comprendre comment vous percevez les mathématiques.
+Répondre à ce questionnaire me permettra d'améliorer mes recherches
+ sur cet aspect et peut être pourra améliorer la qualité de mon enseignement. 
+Merci par avance à celles et ceux qui prendront la peine d'y répondre.
+
+Il y a 10 questions pour ce questionnaire.
+
+\newcounter{rep}
+\newenvironment{Phrase}{%
+\begin{list}{Phrase \arabic{rep} :}
+{\usecounter{rep}%
+\setlength{\labelwidth}{1.8cm}%
+\setlength{\labelsep}{0.1cm}%
+\setlength{\leftmargin}{2cm}%
+\setlength{\itemindent}{0cm}}}
+{\end{list}}
+
+\begin{enumerate}[I)]
+\item \textsc{PERCEPTION DES MATHEMATIQUES}
+  \begin{enumerate}
+  \item Donner en quelques phrases (3 maximum) votre définition des
+    mathématiques.
+    \begin{Phrase}
+      \item Les maths c'est un raisonnement logique, scientifique.
+      \item les maths c'est des calculs.
+      \item c'est duuur !
+    \end{Phrase}
+  \end{enumerate}
+\end{enumerate}
+
+
+
+% 2) Donner une liste des 5 premiers mots qui vous viennent à l'esprit
+% lorsque vous voyez ou entendez le mot "mathématiques". 
+% Réponse 2) :
+
+%     Mot 1:calculs
+%     Mot 2:nombres
+%     Mot 3:logique
+%     Mot 4:scientifique
+%     Mot 5: einstein
+
+% 3) Citez 4 noms de mathématiciens (inutile d'aller sur wikipédia le but est de savoir ceux que vous connaissez).
+% Réponse 3):
+
+%     Mathématicien 1 :einstein
+%     Mathématicien 2 :pythagore
+%     Mathématicien 3 :thales
+%     Mathématicien 4 :
+
+% 4) Selon vous les hommes sont-ils plus aptes que les femmes pour faire des mathématiques ?
+% Réponse 4): non !! tout le monde peut en faire 
+
+% 5) Sans tenir compte des applications potentielles, selon vous est-il
+% utile de faire des mathématiques ? Donnez 3 arguments pour justifier
+% votre réponse. 
+% Réponse 5):
+
+%     Argument 1 :oui mais jusqu a un certain niveau (stats,
+%     addition,multiplication) pour nous aider dans la vie de tous les
+%     jours 
+%     Argument 2 :non parce que les derivations n aide pas dans la vie quotidienne
+%     Argument 3 :oui pour un meilleur raisonnement scientifique et pour les futurs metiers
+
+% 6) Selon vous quelles sont les qualités requises pour faire des mathématiques ? Vous en donnerez 5 maximum.
+% Réponse 6):
+
+%     Qualité 1: mémoire
+%     Qualité 2:bon raisonnement
+%     Qualité 3:assiduité
+%     Qualité 4:bonne compréhension
+%     Qualité 5:serieux
+
+% 7) Selon vous quelles sont les qualités que la pratique mathématique permet de développer ? (C'est-à-dire des qualités que l'on avait peu ou pas et que les mathématiques nous ont permis d'acquérir ou de renforcer).
+% Vous en donnerez 5 maximum. 
+% Réponse 7):
+
+%     Qualité 1:esprit plus logique
+%     Qualité 2:medecine
+%     Qualité 3:l'economie
+%     Qualité 4:cuisine
+%     Qualité 5:
+
+% 8) Quels domaines associez-vous aux mathématiques (5 maximum) ?
+% Réponse 8):
+
+%     Domaine 1 :médecine
+%     Domaine 2 : scientifique
+%     Domaine 3 : logique
+%     Domaine 4 :ingénieur
+%     Domaine 5 :intelligence
+
+% 9) D'après vous quelle est la période historique durant laquelle le
+% nombre de découvertes mathématiques a-t-il été le plus important ? 
+% Réponse 9):je sais pas 
+
+% 10) Les mathématiques vous font-elles peur ?
+% Réponse 10):oui beaucoup , trop difficile car trop de formule, trop de
+% raisonnement incompréhensible, trop de chiffres  
+
+
+\end{document}
