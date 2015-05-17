@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LABEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% raccourcis pour faire des étiquettes (label) %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ANNEXES
+\newcommand{\etap}[1]{\label{App#1}}                       % pour les annexes
+
+\newcommand{\etaps}[2]{\label{App#1sec#2}}                 % pour les
+                                                           % sections des 
+                                                           % annexes
+ 
+
+\newcommand{\etapss}[3]{\label{App#1sec#2subsec#3}}        % pour les
+                                                           % sous-sections des
+                                                           % annexes
+
+% CHAPITRES
+\newcommand{\etch}[1]{\label{chap#1}}                      % pour les chapitres
+
+\newcommand{\etchs}[2]{\label{chap#1sec#2}}                % pour les
+                                                           % sections des 
+                                                           % chapitres
+ 
+
+\newcommand{\etchss}[3]{\label{chap#1sec#2subsec#3}}       % pour les
+                                                           % sous-sections des
+                                                           % chapitres
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%    raccourcis pour faire des références      %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ANNEXES
+\newcommand{\cfap}[1]{~\ref{App#1}}                       % pour les annexes
+\newcommand{\cfapg}[1]{~\pageref{App#1}}                  % pour les pages
+                                                          % des annexes
+
+\newcommand{\cfaps}[2]{~\ref{App#1sec#2}}                 % pour les
+                                                          % sections des 
+                                                          % annexes
+\newcommand{\cfapsg}[2]{~\pageref{App#1sec#2}}            % pour les pages des
+                                                          % sections des annexes
+ 
+
+\newcommand{\cfapss}[3]{~\ref{App#1sec#2subsec#3}}        % pour les
+                                                          % sous-sections des
+                                                          % annexes
+\newcommand{\cfapssg}[3]{~\pageref{App#1sec#2subsec#3}}   % pour les pages des
+                                                          % sous-sections
+                                                          % des annexes
+
+% CHAPITRES
+\newcommand{\cfch}[1]{~\ref{chap#1}}                      % pour les chapitres
+\newcommand{\cfchg}[1]{~\pageref{chap#1}}                 % pour les pages
+                                                          % des chapitres
+
+\newcommand{\cfchs}[2]{~\ref{chap#1sec#2}}                % pour les
+                                                          % sections des 
+                                                          % chapitres
+\newcommand{\cfchsg}[2]{~\pageref{chap#1sec#2}}           % pour les pages des
+                                                          % sections
+                                                          % des
+                                                          % chapitres 
+ 
+
+\newcommand{\cfchss}[3]{~\ref{chap#1sec#2subsec#3}}       % pour les
+                                                          % sous-sections des
+                                                          % chapitres
+\newcommand{\cfchssg}[3]{~\pageref{chap#1sec#2subsec#3}}  % pour les pages des
+                                                          % sous-sections
+                                                          % des chapitres
+
+% pour définir une liste de mots-clés avec la présentation comme abstract
+\newenvironment{motcle}
+        {\begin{center}\normalfont\bfseries Mots-clés
+        \end{center}\begin{quote}}{\end{quote}\par}

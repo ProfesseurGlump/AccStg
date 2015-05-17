@@ -1,0 +1,28 @@
+\usepackage[a4paper, dvips]{geometry}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{polyglossia}
+
+\setmainlanguage{french}
+\setotherlanguage{english}
+
+\usepackage{xltxtra}               % pour faire le logo XeLaTeX
+
+\usepackage{mathtools, amssymb}          % pour les maths
+
+%\usepackage{titlepage}
+\usepackage{tabularx, longtable}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{shortvrb}
+\usepackage{csquotes}
+
+\usepackage{url}
+
+\usepackage[xetex,breaklinks,colorlinks=true,%
+        citecolor=blue,%
+        urlcolor=blue,%
+        pdftitle={Mémoire M2 MEEF},%
+        pdfauthor={Laurent Garnier},%
+        pdfsubject={Quelle approche pour soigner la mathophobie ?}]{hyperref}
+
