@@ -1,0 +1,177 @@
+#+TITLE: Cours de Terminale STMG : Information chiffrée
+#+AUTHOR: Laurent Garnier
+#+LANGUAGE: fr
+#+OPTIONS: H:2 toc:t num:t date:nil
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LATEX_HEADER: \usepackage{amsthm, amssymb}
+#+LATEX_HEADER: \usepackage{pgf,tikz,pgfplots}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage[french]{babel}
+
+#+LATEX_HEADER: \pgfplotsset{compat=1.13}
+#+LATEX_HEADER: \usepgfplotslibrary{fillbetween}
+
+#+LATEX_HEADER: \newtheorem{property}{Propriété}[section]
+#+LATEX_HEADER: \newtheorem{defi}{Défi}[section]
+#+LATEX_HEADER: \newtheorem{exe}{Exemple}[section]
+#+LATEX_HEADER: \newtheorem{exo}{Exercice}[section]
+#+LATEX_HEADER: \newtheorem{sol}{Solution}[section]
+#+LATEX_HEADER: \newtheorem{rem}{Remarque}[section]
+#+LATEX_HEADER: \newtheorem{demo}[theorem]{Démonstration}
+
+#+LATEX_HEADER: \newcommand{\E}[1]{\ensuremath{\mathbb{#1}}}
+#+LATEX_HEADER: \newcommand{\G}[3]{\ensuremath{(\E{#1}^{#2}, #3)}}
+#+LATEX_HEADER: \newcommand{\M}[3]{\ensuremath{\left(\mathcal{M}_{#1}(\E{#2}), #3\right)}}
+#+LATEX_HEADER: \newcommand{\tc}[2]{\ensuremath{\textcolor{#1}{#2}}}
+
+#+BEAMER_THEME: default
+#+BEAMER__COLOR_THEME: seagull
+#+BEAMER_OUTER_THEME: default
+#+BEAMER_INNER_THEME: rectangles
+#+BEAMER_FONT_THEME: structurebold
+
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+STARTUP: beamer
+
+
+* Rappels du programme officiel [1/3]
+** Rappels du programme [1/3]
+  
+    + Contenus :: Indice simple en base 100
+    + Capacités attendues :: Passer de l'indice au taux d'évolution,
+         et réciproquement.
+    + Commentaires :: Le calcul d'un indice synthétique, comme par
+                      exemple l'indice des prix, n'est pas au programme.
+   
+** Indice simple en base 100 de y_2 par rapport à y_1
+
+   #+BEGIN_definition
+   On appelle *indice simple en base 100* de $y_2$ par rapport à $y_1$
+   le nombre I tel que l'évolution qui fait passer de $y_1$ à $y_2$
+   fait passer de 100 à I : $I = 100\times k = 100\times \dfrac{y_2}{y_1}$
+   Par commodité, on écrira seulement << indice de y_2 par rapport à
+   y_1 >>
+   #+END_definition
+
+   #+BEGIN_exe
+   Un concessionnaire a vendu 800 voitures en janvier et 750 en
+   février. L'indice des ventes en février, base 100 en janvier, est
+   l'indice de $y_2 = 750$ par rapport à $y_1 = 800$, c'est-à-dire I =
+   100\times \dfrac{750}{800} = 93,75
+   #+END_exe
+
+   #+BEGIN_defi
+   En 2016 en France 32,5 millions de personnes consultaient YouTube
+   quotidiennement. En 2017 on est passé à 37,5. Calculer l'indice
+   base 100 en 2016.
+   #+END_defi
+
+** Lien entre indice et taux d'évolution
+
+   #+BEGIN_property
+   L'indice I de y_2 par rapport à y_1 et le taux d'évolution t de y_1
+   à y_2 sont reliés par les égalités :
+   $I = 100\times (1 + t)$ et $t = \dfrac{I-100}{100}$
+   #+END_property
+
+   #+BEGIN_exe
+   Une entreprise passe de l'indice I_1 = 100 à l'indice I_2 = 115. Calculons le
+   taux d'évolution : $t = \dfrac{115 - 100}{100} = 0,15$
+   #+END_exe
+
+   #+BEGIN_defi
+   Quel est le taux d'évolution si on passe de l'indice I_1 = 100 à
+   l'indice I_2 = 97 ?
+   #+END_defi
+* Rappels du programme officiel [2/3]
+** Rappels du programme [2/3]
+  
+    + Contenus :: Racine n-ième d'un réel positif. Notation $a^{1/n}$
+    + Capacités attendues :: Déterminer avec une calculatrice ou un
+         tableur la solution positive de l'équation $x^n = a$, lorsque
+         a est un réel positif.
+    + Commentaires :: La notation $\sqrt[n]{}$ n'est pas exigible.
+   
+** Equations x^n = a, d'inconnue x dans l'intervalle [0;+\infty[
+
+   #+BEGIN_definition
+   On démontre que *l'équation x^n = a* admet une unique solution dans
+   l'intervalle [0;+\infty[. Cette solution est notée a^{1/n}
+   #+END_definition
+
+   #+BEGIN_exe
+   L'équation x^3 = 8 admet une unique solution, x = 2.
+   #+END_exe
+
+   #+BEGIN_defi
+   Quelle est l'unique solution de l'équation x^5 = 32 ?
+   #+END_defi
+
+** Racine n-ième d'un nombre réel positif ou nul   
+
+   #+BEGIN_definition
+   On appelle *racine n-ième de a* la solution a^{1/n} de l'équation
+   x^n = a dans l'intervalle [0; +\infty[.
+   #+END_definition
+
+   #+BEGIN_exe
+   + 4 est la racine troisième de 64 parce que 4^3 = 64
+   + 3 est la racine quatrième de 81 parce que 3^4 = 81
+   + 2 est la racine septième de 64 parce que 2^7 = 128
+   #+END_exe
+
+   #+BEGIN_defi
+   + Trouver la racine troisième de 125.
+   + Trouver la racine cinquième de 100 000.
+   + Trouver la racine sixième de 64.
+   #+END_defi
+
+* Rappels du programme officiel [3/3]
+** Rappels du programme [3/3]
+  
+    + Contenus :: Taux d'évolution moyen.
+    + Capacités attendues :: Trouver le taux moyen connaissant le taux global.
+    + Commentaires :: Exemple : taux mensuel équivalent à un taux annuel.
+** Taux d'évolution global
+
+   #+BEGIN_definition
+   On appelle *taux d'évolution global* (ou *taux global*) des n
+   évolutions successives, le taux d'évolution T de y_0 à y_n :
+   \[1 + T = (1 + t_1)(1 + t_2)\dots (1 + t_n)\]
+   #+END_definition
+
+   #+BEGIN_exe
+   Une entreprise connaît une hausse de 7% entre 2015 et 2016 puis une
+   hausse de 4% entre 2017 et 2018. Calculons le taux global.
+   1 + T = (1 + 0,07)(1 + 0,04) = 1,07\times 1,04 = 1,1128 d'où T =
+   0,1128 = 11,28%
+   #+END_exe
+
+   #+BEGIN_defi
+   Une entreprise connaît une baisse de 7% entre 2015 et 2016 puis une
+   baisse de 4% entre 2017 et 2018. Calculer le taux global.
+   #+END_defi
+** Taux d'évolution moyen
+   
+   #+BEGIN_definition
+   On appelle *taux d'évolution moyen* (ou *taux moyen*) des n
+   évolutions successives, le nombre t_M tel que n évolutions
+   successives de même taux t_M, partant de y_0, aboutissent au même
+   nombre y_n que les évolutions précédentes. 
+   $(1+t_M)^n = 1 + T$ ainsi 1 + t_M est la racine n-ième de 1 + T.
+   #+END_definition
+
+   #+BEGIN_exe
+   L'effectif d'un lycée a augmenté de 25% en 3 ans. Calculons son
+   taux d'évolution moyen : (1 + t_M)^{3} = 1,25 d'où 1 + t_M =
+   1,25^{1/3} \simeq 1,08 soit t_M \simeq 8%
+   #+END_exe
+
+   #+BEGIN_defi
+   Deux ans plus tard, le même lycée constate une augmentation de 18%
+   en deux ans. Calculer le taux moyen.
+   #+END_defi

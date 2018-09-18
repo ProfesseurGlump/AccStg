@@ -1,0 +1,213 @@
+% Created 2018-09-18 Tue 13:23
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm, amssymb}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage[french, frenchb]{babel}
+\pgfplotsset{compat=1.13}
+\usepgfplotslibrary{fillbetween}
+\newtheorem{property}{Propriété}[section]
+\newtheorem{defi}{Défi}[section]
+\newtheorem{exe}{Exemple}[section]
+\newtheorem{exo}{Exercice}[section]
+\newtheorem{sol}{Solution}[section]
+\newtheorem{rem}{Remarque}[section]
+\newtheorem{demo}[theorem]{Démonstration}
+\newcommand{\E}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\G}[3]{\ensuremath{(\E{#1}^{#2}, #3)}}
+\newcommand{\M}[3]{\ensuremath{\left(\mathcal{M}_{#1}(\E{#2}), #3\right)}}
+\newcommand{\tc}[2]{\ensuremath{\textcolor{#1}{#2}}}
+\usetheme{default}
+\usefonttheme{structurebold}
+\useinnertheme{rectangles}
+\useoutertheme{default}
+\author{Laurent Garnier}
+\date{}
+\title{Cours de Terminale STMG : Information chiffrée}
+\hypersetup{
+pdfauthor={Laurent Garnier},
+pdftitle={Cours de Terminale STMG : Information chiffrée},
+pdfkeywords={},
+pdfsubject={},
+pdfcreator={Emacs 25.3.1 (Org mode 9.1.6)},
+pdflang={Frenchb},
+colorlinks,
+citecolor=red,
+filecolor=orange,
+linkcolor=green,
+urlcolor=magenta
+}\begin{document}
+
+\maketitle
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+
+\section{Rappels du programme officiel [1/3]}
+\label{sec:orge7de06d}
+\begin{frame}[label={sec:org2bc31e7}]{Rappels du programme [1/3]}
+\begin{description}
+\item[{Contenus}] Indice simple en base 100
+\item[{Capacités attendues}] Passer de l'indice au taux d'évolution,
+et réciproquement.
+\item[{Commentaires}] Le calcul d'un indice synthétique, comme par
+exemple l'indice des prix, n'est pas au programme.
+\end{description}
+\end{frame}
+
+\begin{frame}[label={sec:org5f4f347}]{Indice simple en base 100 de y\(_{\text{2}}\) par rapport à y\(_{\text{1}}\)}
+\begin{definition}
+On appelle \alert{indice simple en base 100} de \(y_2\) par rapport à \(y_1\)
+le nombre I tel que l'évolution qui fait passer de \(y_1\) à \(y_2\)
+fait passer de 100 à I : \(I = 100\times k = 100\times \dfrac{y_2}{y_1}\)
+Par commodité, on écrira seulement << indice de y\(_{\text{2}}\) par rapport à
+y\(_{\text{1}}\) >>
+\end{definition}
+
+\begin{exe}
+Un concessionnaire a vendu 800 voitures en janvier et 750 en
+février. L'indice des ventes en février, base 100 en janvier, est
+l'indice de \(y_2 = 750\) par rapport à \(y_1 = 800\), c'est-à-dire I =
+100\texttimes{} \dfrac{750}{800} = 93,75
+\end{exe}
+
+\begin{defi}
+En 2016 en France 32,5 millions de personnes consultaient YouTube
+quotidiennement. En 2017 on est passé à 37,5. Calculer l'indice
+base 100 en 2016.
+\end{defi}
+\end{frame}
+
+\begin{frame}[label={sec:orgce3c1f2}]{Lien entre indice et taux d'évolution}
+\begin{property}
+L'indice I de y\(_{\text{2}}\) par rapport à y\(_{\text{1}}\) et le taux d'évolution t de y\(_{\text{1}}\)
+à y\(_{\text{2}}\) sont reliés par les égalités :
+\(I = 100\times (1 + t)\) et \(t = \dfrac{I-100}{100}\)
+\end{property}
+
+\begin{exe}
+Une entreprise passe de l'indice I\(_{\text{1}}\) = 100 à l'indice I\(_{\text{2}}\) = 115. Calculons le
+taux d'évolution : \(t = \dfrac{115 - 100}{100} = 0,15\)
+\end{exe}
+
+\begin{defi}
+Quel est le taux d'évolution si on passe de l'indice I\(_{\text{1}}\) = 100 à
+l'indice I\(_{\text{2}}\) = 97 ?
+\end{defi}
+\end{frame}
+\section{Rappels du programme officiel [2/3]}
+\label{sec:org03c50d0}
+\begin{frame}[label={sec:org2b05f23}]{Rappels du programme [2/3]}
+\begin{description}
+\item[{Contenus}] Racine n-ième d'un réel positif. Notation \(a^{1/n}\)
+\item[{Capacités attendues}] Déterminer avec une calculatrice ou un
+tableur la solution positive de l'équation \(x^n = a\), lorsque
+a est un réel positif.
+\item[{Commentaires}] La notation \(\sqrt[n]{}\) n'est pas exigible.
+\end{description}
+\end{frame}
+
+\begin{frame}[label={sec:org09adba9}]{Equations x\(^{\text{n}}\) = a, d'inconnue x dans l'intervalle [0;+\(\infty\)[}
+\begin{definition}
+On démontre que \alert{l'équation x\(^{\text{n}}\) = a} admet une unique solution dans
+l'intervalle [0;+\(\infty\)[. Cette solution est notée a\(^{\text{1/n}}\)
+\end{definition}
+
+\begin{exe}
+L'équation x\(^{\text{3}}\) = 8 admet une unique solution, x = 2.
+\end{exe}
+
+\begin{defi}
+Quelle est l'unique solution de l'équation x\(^{\text{5}}\) = 32 ?
+\end{defi}
+\end{frame}
+
+\begin{frame}[label={sec:org9700504}]{Racine n-ième d'un nombre réel positif ou nul}
+\begin{definition}
+On appelle \alert{racine n-ième de a} la solution a\(^{\text{1/n}}\) de l'équation
+x\(^{\text{n}}\) = a dans l'intervalle [0; +\(\infty\)[.
+\end{definition}
+
+\begin{exe}
+\begin{itemize}
+\item 4 est la racine troisième de 64 parce que 4\(^{\text{3}}\) = 64
+\item 3 est la racine quatrième de 81 parce que 3\(^{\text{4}}\) = 81
+\item 2 est la racine septième de 64 parce que 2\(^{\text{7}}\) = 128
+\end{itemize}
+\end{exe}
+
+\begin{defi}
+\begin{itemize}
+\item Trouver la racine troisième de 125.
+\item Trouver la racine cinquième de 100 000.
+\item Trouver la racine sixième de 64.
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\section{Rappels du programme officiel [3/3]}
+\label{sec:org41decc9}
+\begin{frame}[label={sec:org5db3b5e}]{Rappels du programme [3/3]}
+\begin{description}
+\item[{Contenus}] Taux d'évolution moyen.
+\item[{Capacités attendues}] Trouver le taux moyen connaissant le taux global.
+\item[{Commentaires}] Exemple : taux mensuel équivalent à un taux annuel.
+\end{description}
+\end{frame}
+\begin{frame}[label={sec:org59ea5cc}]{Taux d'évolution global}
+\begin{definition}
+On appelle \alert{taux d'évolution global} (ou \alert{taux global}) des n
+évolutions successives, le taux d'évolution T de y\(_{\text{0}}\) à y\(_{\text{n}}\) :
+\[1 + T = (1 + t_1)(1 + t_2)\dots (1 + t_n)\]
+\end{definition}
+
+\begin{exe}
+Une entreprise connaît une hausse de 7\% entre 2015 et 2016 puis une
+hausse de 4\% entre 2017 et 2018. Calculons le taux global.
+1 + T = (1 + 0,07)(1 + 0,04) = 1,07\texttimes{} 1,04 = 1,1128 d'où T =
+0,1128 = 11,28\%
+\end{exe}
+
+\begin{defi}
+Une entreprise connaît une baisse de 7\% entre 2015 et 2016 puis une
+baisse de 4\% entre 2017 et 2018. Calculer le taux global.
+\end{defi}
+\end{frame}
+\begin{frame}[label={sec:orgc1e8a78}]{Taux d'évolution moyen}
+\begin{definition}
+On appelle \alert{taux d'évolution moyen} (ou \alert{taux moyen}) des n
+évolutions successives, le nombre t\(_{\text{M}}\) tel que n évolutions
+successives de même taux t\(_{\text{M}}\), partant de y\(_{\text{0}}\), aboutissent au même
+nombre y\(_{\text{n}}\) que les évolutions précédentes. 
+\((1+t_M)^n = 1 + T\) ainsi 1 + t\(_{\text{M}}\) est la racine n-ième de 1 + T.
+\end{definition}
+
+\begin{exe}
+L'effectif d'un lycée a augmenté de 25\% en 3 ans. Calculons son
+taux d'évolution moyen : (1 + t\(_{\text{M}}\))\(^{\text{3}}\) = 1,25 d'où 1 + t\(_{\text{M}}\) =
+1,25\(^{\text{1/3}}\) \(\simeq\) 1,08 soit t\(_{\text{M}}\) \(\simeq\) 8\%
+\end{exe}
+
+\begin{defi}
+Deux ans plus tard, le même lycée constate une augmentation de 18\%
+en deux ans. Calculer le taux moyen.
+\end{defi}
+\end{frame}
+\end{document}
