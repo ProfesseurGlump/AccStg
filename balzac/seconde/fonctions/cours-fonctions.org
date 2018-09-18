@@ -1,0 +1,191 @@
+#+TITLE: Cours de 2\up{de} : Fonctions
+#+AUTHOR: Laurent Garnier
+#+LANGUAGE: fr
+#+OPTIONS: H:2 toc:t num:t date:nil
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LATEX_HEADER: \usepackage{amsthm, amssymb}
+#+LATEX_HEADER: \usepackage{pgf,tikz,pgfplots}
+#+LATEX_HEADER: \pgfplotsset{compat=1.15}
+#+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usetikzlibrary{arrows}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage[french]{babel}
+
+#+LATEX_HEADER: \pgfplotsset{compat=1.13}
+#+LATEX_HEADER: \usepgfplotslibrary{fillbetween}
+
+#+LATEX_HEADER: \newtheorem{property}{Propriété}[section]
+#+LATEX_HEADER: \newtheorem{defi}{Défi}[section]
+#+LATEX_HEADER: \newtheorem{exe}{Exemple}[section]
+#+LATEX_HEADER: \newtheorem{exo}{Exercice}[section]
+#+LATEX_HEADER: \newtheorem{sol}{Solution}[section]
+#+LATEX_HEADER: \newtheorem{rem}{Remarque}[section]
+#+LATEX_HEADER: \newtheorem{demo}[theorem]{Démonstration}
+
+#+LATEX_HEADER: \newcommand{\E}[1]{\ensuremath{\mathbb{#1}}}
+#+LATEX_HEADER: \newcommand{\G}[3]{\ensuremath{(\E{#1}^{#2}, #3)}}
+#+LATEX_HEADER: \newcommand{\M}[3]{\ensuremath{\left(\mathcal{M}_{#1}(\E{#2}), #3\right)}}
+#+LATEX_HEADER: \newcommand{\tc}[2]{\ensuremath{\textcolor{#1}{#2}}}
+
+#+BEAMER_THEME: default
+#+BEAMER__COLOR_THEME: seagull
+#+BEAMER_OUTER_THEME: default
+#+BEAMER_INNER_THEME: rectangles
+#+BEAMER_FONT_THEME: structurebold
+
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+STARTUP: beamer
+
+
+* [[http://cache.media.education.gouv.fr/file/30/52/3/programme_mathematiques_seconde_65523.pdf][Rappels du programme officiel]]
+** Rappels du programme 
+  
+    + Contenus :: Image, antécédent, courbe représentative
+    + Capacités attendues :: 
+
+	 + Traduire le lien entre deux quantités par une formule.
+         + Identifier la variable et, éventuellement, l'ensemble de
+           définition.
+         + Déterminer l'image d'un nombre.
+         + Rechercher des antécédents d'un nombre.
+    + Commentaires :: 
+
+	 + Les fonctions abordées sont généralement des fonctions
+           numériques d'une variable réelle pour lesquelles l'ensemble
+           de définition est donné.
+         + Quelques exemples de fonctions définies sur un ensemble
+           fini ou sur \E{N}, voire de fonctions de deux variables (aire
+           en fonction des dimensions) sont à donner
+   
+* Traduire le lien entre deux quantités par une formule
+** Modéliser une fonction
+   #+BEGIN_definition
+   + On définit une fonction f sur un ensemble de nombres D en
+     associant à chaque nombre x appartenant à D, *un seul* nombre
+     réel *y*.
+   + On dit que f est une fonction de la *variable* x.
+   + D est appelé *ensemble de définition* de f (on dit que f *est
+     définie sur D*)
+   + On note alors : \[f : x\mapsto y = f(x)\]
+   + x est *un antécédent* de y par f 
+   + y est *l'image* de x par f
+   #+END_definition
+
+** Avec une courbe
+
+   #+BEGIN_exe
+   Croissance chinoise (PIB en %) en fonction du nombre d'années.
+   #+END_exe
+
+   \begin{figure}
+   \begin{center}
+   \includegraphics[width=.95\textwidth]{croissance-chinoise.png}
+   \end{center}
+   \end{figure}
+
+** Avec un tableau de données
+
+   #+BEGIN_exe
+   Quelle est la distance parcourue pendant le temps de réaction en
+   fonction de la vitesse ? 
+   
+   Pour connaître la distance parcourue pendant le temps de réaction,
+   il suffit de multiplier le chiffre des dizaines par 3. 
+   
+   | /                 | <> | <> | <> |  <> | <  
+   | Vitesse (en km/h) | 50 | 70 | 90 | 110 | 130 
+   |-------------------+----+----+----+-----+-----
+   | Distance (en m)   | 15 | 21 | 27 |  33 |  39 
+   #+END_exe
+
+   #+BEGIN_defi
+   Quelle est la distance parcourue pour une vitesse de 60 km/h ? Pour
+   80 km/h ? Et pour 100 km/h ?
+   #+END_defi
+
+** Avec une formule
+   
+   #+BEGIN_exe
+   Au moment où je rédige ce cours le cours du Bitcoin est à 5
+   446,11€. La formule permettant de déterminer le prix en euros de x
+   bitcoins est donc : \[f(x) = 5446,11x\]
+   #+END_exe
+
+   \begin{figure}
+   \begin{center}
+   \includegraphics[width=.95\textwidth]{coinmarket.png}
+   \end{center}
+   \end{figure}
+
+   #+BEGIN_defi
+   Si 1 BTC = 5 446,11 € quelle fraction de bitcoins obtient-on avec 1
+   euro ?
+   #+END_defi
+
+* Courbe représentative d'une fonction
+** Une première définition
+   #+BEGIN_definition
+   La fonction f est définie sur D. Dans le plan muni d'un repère, la
+   courbe représentative \mathcal{C}_f de la fonction f est l'ensemble
+   des points M(x;y) tels que y = f(x) quand x prend toutes les
+   valeurs de D. On dit que \mathcal{C}_f a pour équation y = f(x).
+
+   Cela signifie que :
+   + si un point M(x_M ; y_M) appartient à la courbe \mathcal{C}_f
+     alors y_M = f(x_M)
+   + si y_M = f(x_M) alors le point M(x_M ; y_M) appartient à la courbe
+     \mathcal{C}_f 
+   #+END_definition
+
+** Exemple graphique
+   
+   \definecolor{uuuuuu}{rgb}{0.26,0.26,0.26}
+   \definecolor{qqwuqq}{rgb}{0,0.39,0}
+   \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+   \begin{axis}[
+   x=1cm,y=1cm,
+   axis lines=middle,
+   ymajorgrids=true,
+   xmajorgrids=true,
+   xmin=-5,
+   xmax=5,
+   ymin=-5.25,
+   ymax=2.75,
+   xtick={-5,...,5},
+   ytick={-5,...,2},]
+   \clip(-5,-5.25) rectangle (5,2.75);
+   \draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-5:5] plot(\x,{0-0.5*(\x)^(3)-(\x)^(2)+3*(\x)+1});
+   \begin{scriptsize}
+   \draw[color=qqwuqq] (-3.5,2.25) node {$f$};
+   \draw [fill=uuuuuu] (0,1) circle (2pt);
+   \draw[color=uuuuuu] (0.2,.75) node {$A$};
+   \draw [fill=uuuuuu] (2,-1) circle (2pt);
+   \draw[color=uuuuuu] (1.75,-0.75) node {$B$};
+   \end{scriptsize}
+   \end{axis}
+   \end{tikzpicture}
+** Petit exercice
+
+   #+BEGIN_defi
+   1. Lire les coordonnées des points A et B sur le graphique
+      précédent.
+   2. Combien de fois la courbe passe-t-elle par l'axe des abscisses ?
+   3. Encadrer chacune des solutions de l'équation f(x) = 0 à l'entier près.
+   #+END_defi
+
+** Tracer une courbe à partir d'un tableau de données
+
+   On considère le tableau de valeurs suivant :
+   
+   | /    | <> | <> | <> | <> | <> | <> | < |
+   | x    | -3 | -2 | -1 |  0 |  1 |  2 | 3 |
+   |------+----+----+----+----+----+----+---|
+   | f(x) |  9 |  4 |  1 |  0 |  1 |  4 | 9 |
+   
+
+   Tracer la courbe représentative associée
+   

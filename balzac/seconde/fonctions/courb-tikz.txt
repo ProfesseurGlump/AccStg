@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.520000000000001,
+xmax=10.520000000000001,
+ymin=-9.52,
+ymax=4.96,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.52) rectangle (10.52,4.96);
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-10.520000000000001:10.520000000000001] plot(\x,{0-0.5*(\x)^(3)-(\x)^(2)+3*(\x)+1});
+\begin{scriptsize}
+\draw[color=qqwuqq] (-3.72,4.87) node {$f$};
+\draw [fill=uuuuuu] (0,1) circle (2pt);
+\draw[color=uuuuuu] (0.16,1.39) node {$A$};
+\draw [fill=uuuuuu] (2,-1) circle (2pt);
+\draw[color=uuuuuu] (2.16,-0.61) node {$B$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
