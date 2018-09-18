@@ -1,0 +1,199 @@
+% Created 2018-09-17 Mon 17:16
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm, amssymb}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage[french, frenchb]{babel}
+\pgfplotsset{compat=1.13}
+\usepgfplotslibrary{fillbetween}
+\newtheorem{property}{Propriété}[section]
+\newtheorem{defi}{Défi}[section]
+\newtheorem{exe}{Exemple}[section]
+\newtheorem{exo}{Exercice}[section]
+\newtheorem{sol}{Solution}[section]
+\newtheorem{rem}{Remarque}[section]
+\newtheorem{demo}[theorem]{Démonstration}
+\newcommand{\E}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\G}[3]{\ensuremath{(\E{#1}^{#2}, #3)}}
+\newcommand{\M}[3]{\ensuremath{\left(\mathcal{M}_{#1}(\E{#2}), #3\right)}}
+\newcommand{\tc}[2]{\ensuremath{\textcolor{#1}{#2}}}
+\usetheme{default}
+\usefonttheme{structurebold}
+\useinnertheme{rectangles}
+\useoutertheme{default}
+\author{Laurent Garnier}
+\date{}
+\title{Cours de 1\up{ère} STMG : Proportion}
+\hypersetup{
+pdfauthor={Laurent Garnier},
+pdftitle={Cours de 1\up{ère} STMG : Proportion},
+pdfkeywords={},
+pdfsubject={},
+pdfcreator={Emacs 25.3.1 (Org mode 9.1.6)},
+pdflang={Frenchb},
+colorlinks,
+citecolor=red,
+filecolor=orange,
+linkcolor=green,
+urlcolor=magenta
+}
+\begin{document}
+
+\maketitle
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+
+\section{Rappels du programme officiel [1/3]}
+\label{sec:org438787e}
+\begin{frame}[label={sec:orgb6847e2}]{Rappels du programme [1/3]}
+\begin{description}
+\item[{Contenus}] Proportion d'une sous-population dans une
+population.
+\item[{Capacités attendues}] 
+\end{description}
+
+
+\begin{itemize}
+\item Connaître et exploiter la relation entre effectifs et
+proportion.
+\item Associer proportion et pourcentage.
+\end{itemize}
+\begin{description}
+\item[{Commentaires}] 
+\end{description}
+
+
+\begin{itemize}
+\item Exemples : taux d'activité, taux de chômage, part de marché,
+cote de popularité.
+\item L'importance de la population de référence est soulignée.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org27a09e8}]{Institutionalisation [1/3]}
+Dans toute cette partie, A et B désignent deux sous-populations
+d'une population E.
+
+\begin{definition}
+La \alert{proportion de A dans E} est le nombre réel \(\dfrac{n_A}{n_E}\) où
+\(n_A\) l'effectif de A et \(n_E\) l'effectif de E.
+\end{definition}
+
+\begin{exe}
+Dans le monde 1,8 milliards de personnes se rendent sur YouTube chaque mois 
+(satistique publiée en avril 2018). En France 37,5 millions de personnes s'y 
+connectent chaque mois. La proportion des visiteurs français de YouTube est : 
+p = \dfrac{37,5\times 10^6}{1,8\times 10^9} \(\simeq\) 2,1 \%
+\end{exe}
+
+\begin{defi}
+Sachant que la population française est d'environ 65 millions
+d'habitants, quelle est la proportion de visiteurs de YouTube en
+France ?
+\end{defi}
+\end{frame}
+\section{Rappels du programme officiel [2/3]}
+\label{sec:orgfc644c3}
+\begin{frame}[label={sec:org47faa7c}]{Rappels du programme [2/3]}
+\begin{description}
+\item[{Contenus}] Union et intersection de sous-populations.
+\item[{Capacités attendues}] Pour deux sous-populations A et B d'une
+population E, relier les proportions de A, de B, de \(A \cup B\)
+et de \(A \cap B\).
+\item[{Commentaires}] On peut étendre l'étude à plusieurs
+sous-populations disjointes deux à deux ;
+observer que pour une partition la somme des
+fréquences vaut 1.
+\end{description}
+\end{frame}
+
+\begin{frame}[label={sec:org61a02e0}]{Institutionalisation [2/3]}
+\begin{definition}
+L'\alert{intersection A \(\cap\) B} est la sous-population de E constituée
+des individus appartenant à la fois \alert{à A et à B}. L'\alert{union A \(\cup\)
+B} est la sous-population constituée des individus appartenant \alert{à A
+ou à B}, c'est-à-dire ceux qui sont soit dans A, soit dans B, soit
+dans les deux. 
+\end{definition}
+
+\begin{property}
+\(p_A\), \(p_B\), \(p_{A\cap B}\), \(p_{A\cup B}\) désignent les
+proportions associées. \(p_{A\cup B} = p_A + p_B - p_{A\cap B}\)
+\end{property}
+
+\begin{exe}
+Soit E l'ensemble des 10 chiffres, A ceux inférieurs ou égaux à 5
+et B ceux impairs. \(A\cap B\) = \{1, 3, 5\}, \(A\cup B\) = \{0, 1, 2,
+3, 4, 5, 7, 9\} et \(p_{A\cup B} = 0,6 + 0,5 - 0,3 = 0,8\)
+\end{exe}
+
+\begin{defi}
+On reprend la situation précédente avec B qui désigne les
+pairs. Refaire tous les calculs.
+\end{defi}
+\end{frame}
+
+\section{Rappels du programme officiel [3/3]}
+\label{sec:orgc603c6b}
+\begin{frame}[label={sec:org18faf33}]{Rappels du programme [3/3]}
+\begin{description}
+\item[{Contenus}] Inclusion
+\item[{Capacités attendues}] 
+\end{description}
+
+
+\begin{itemize}
+\item Connaître et exploiter la relation entre proportion de A
+dans B, de B dans E et de A dans E, lorsque \(A\subset B\) et
+\(B\subset E\).
+\item Représenter des situations par des tableaux ou des arbres pondérés.
+\end{itemize}
+\begin{description}
+\item[{Commentaires}] La notion de fréquence marginale est rencontrée
+mais ce vocabulaire n'est pas exigible.
+\end{description}
+\end{frame}
+\begin{frame}[label={sec:org03cd4ff}]{Institutionalisation [3/3]}
+\begin{definition}
+Lorsque tous les éléments d'un ensemble A appartiennent à un
+ensemble B, on dit que \alert{A est inclus dans B} et on note \(A\subset B\).
+\end{definition}
+
+\begin{property}
+Si \(A\subset B\) et \(B\subset E\), et si \(p_1\) est la proportion de A
+dans B et \(p_2\) celle de B dans E alors celle de A dans E est \(p = p_1p_2\).
+\end{property}
+
+\begin{exe}
+Dans une classe de 1\up{ère} STMG il y a 12 filles pour 18
+garçons. Parmi les 12 filles 7 aiment faire du shopping.
+La proportion des filles qui aiment faire du shopping dans cette
+classe est : \(p = p_1p_2 = \dfrac{7}{12}\times \dfrac{12}{30} =
+   \dfrac{7}{30} \simeq\) 23\%
+\end{exe}
+
+\begin{defi}
+Dans cette même classe, parmi les 18 garçons, 12 aiment jouer au
+foot. Quelle est la proportion des garçons de la classe qui aiment
+jouer au foot ?
+\end{defi}
+\end{frame}
+\end{document}

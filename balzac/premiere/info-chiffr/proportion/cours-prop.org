@@ -1,0 +1,202 @@
+#+TITLE: Cours de 1\up{ère} STMG : Proportion
+#+AUTHOR: Laurent Garnier
+#+LANGUAGE: fr
+#+OPTIONS: H:2 toc:t num:t date:nil
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LATEX_HEADER: \usepackage{amsthm, amssymb}
+#+LATEX_HEADER: \usepackage{pgf,tikz,pgfplots}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage[french]{babel}
+
+#+LATEX_HEADER: \pgfplotsset{compat=1.13}
+#+LATEX_HEADER: \usepgfplotslibrary{fillbetween}
+
+#+LATEX_HEADER: \newtheorem{property}{Propriété}[section]
+#+LATEX_HEADER: \newtheorem{defi}{Défi}[section]
+#+LATEX_HEADER: \newtheorem{exe}{Exemple}[section]
+#+LATEX_HEADER: \newtheorem{exo}{Exercice}[section]
+#+LATEX_HEADER: \newtheorem{sol}{Solution}[section]
+#+LATEX_HEADER: \newtheorem{rem}{Remarque}[section]
+#+LATEX_HEADER: \newtheorem{demo}[theorem]{Démonstration}
+
+#+LATEX_HEADER: \newcommand{\E}[1]{\ensuremath{\mathbb{#1}}}
+#+LATEX_HEADER: \newcommand{\G}[3]{\ensuremath{(\E{#1}^{#2}, #3)}}
+#+LATEX_HEADER: \newcommand{\M}[3]{\ensuremath{\left(\mathcal{M}_{#1}(\E{#2}), #3\right)}}
+#+LATEX_HEADER: \newcommand{\tc}[2]{\ensuremath{\textcolor{#1}{#2}}}
+
+#+BEAMER_THEME: default
+#+BEAMER__COLOR_THEME: seagull
+#+BEAMER_OUTER_THEME: default
+#+BEAMER_INNER_THEME: rectangles
+#+BEAMER_FONT_THEME: structurebold
+
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+STARTUP: beamer
+
+
+* Rappels du programme officiel [1/3]
+** Rappels du programme [1/3]
+  
+    + Contenus :: Proportion d'une sous-population dans une
+                  population.
+    + Capacités attendues :: 
+
+
+	 + Connaître et exploiter la relation entre effectifs et
+            proportion.
+         + Associer proportion et pourcentage.
+    + Commentaires :: 
+
+
+       + Exemples : taux d'activité, taux de chômage, part de marché,
+          cote de popularité.
+       + L'importance de la population de référence est soulignée.
+   
+** Institutionalisation [1/3]
+
+   Dans toute cette partie, A et B désignent deux sous-populations
+   d'une population E.
+
+   #+BEGIN_definition
+   La *proportion de A dans E* est le nombre réel $\dfrac{n_A}{n_E}$ où
+   $n_A$ l'effectif de A et $n_E$ l'effectif de E.
+   #+END_definition
+
+   #+BEGIN_exe
+   Dans le monde 1,8 milliards de personnes se rendent sur YouTube chaque mois 
+   (satistique publiée en avril 2018). En France 37,5 millions de personnes s'y 
+   connectent chaque mois. La proportion des visiteurs français de YouTube est : 
+   p = \dfrac{37,5\times 10^6}{1,8\times 10^9} \simeq 2,1 %
+   #+END_exe
+
+   #+BEGIN_defi
+   Sachant que la population française est d'environ 65 millions
+   d'habitants, quelle est la proportion de visiteurs de YouTube en
+   France ?
+   #+END_defi
+* Rappels du programme officiel [2/3]
+** Rappels du programme [2/3]
+  
+    + Contenus :: Union et intersection de sous-populations.
+    + Capacités attendues :: Pour deux sous-populations A et B d'une
+         population E, relier les proportions de A, de B, de $A \cup B$
+         et de $A \cap B$.
+    + Commentaires :: On peut étendre l'étude à plusieurs
+                      sous-populations disjointes deux à deux ;
+                      observer que pour une partition la somme des
+                      fréquences vaut 1.
+   
+** Institutionalisation [2/3]
+
+   #+BEGIN_definition
+   L'*intersection A \cap B* est la sous-population de E constituée
+   des individus appartenant à la fois *à A et à B*. L'*union A \cup
+   B* est la sous-population constituée des individus appartenant *à A
+   ou à B*, c'est-à-dire ceux qui sont soit dans A, soit dans B, soit
+   dans les deux. 
+   #+END_definition
+
+   #+BEGIN_property
+   $p_A$, $p_B$, $p_{A\cap B}$, $p_{A\cup B}$ désignent les
+   proportions associées. $p_{A\cup B} = p_A + p_B - p_{A\cap B}$
+   #+END_property
+
+   #+BEGIN_exe
+   Soit E l'ensemble des 10 chiffres, A ceux inférieurs ou égaux à 5
+   et B ceux impairs. $A\cap B$ = {1, 3, 5}, $A\cup B$ = {0, 1, 2,
+   3, 4, 5, 7, 9} et $p_{A\cup B} = 0,6 + 0,5 - 0,3 = 0,8$
+   #+END_exe
+
+   #+BEGIN_defi
+   On reprend la situation précédente avec B qui désigne les
+   pairs. Refaire tous les calculs.
+   #+END_defi
+   
+* Rappels du programme officiel [3/3]
+** Rappels du programme [3/3]
+  
+    + Contenus :: Inclusion
+    + Capacités attendues :: 
+
+
+	 + Connaître et exploiter la relation entre proportion de A
+           dans B, de B dans E et de A dans E, lorsque $A\subset B$ et
+           $B\subset E$. 
+         + Représenter des situations par des tableaux ou des arbres pondérés.
+    + Commentaires :: La notion de fréquence marginale est rencontrée
+                      mais ce vocabulaire n'est pas exigible.   
+** Institutionalisation [3/3]
+
+
+   #+BEGIN_definition
+   Lorsque tous les éléments d'un ensemble A appartiennent à un
+   ensemble B, on dit que *A est inclus dans B* et on note $A\subset B$.
+   #+END_definition
+
+   #+BEGIN_property
+   Si $A\subset B$ et $B\subset E$, et si $p_1$ est la proportion de A
+   dans B et $p_2$ celle de B dans E alors celle de A dans E est $p = p_1p_2$.
+   #+END_property
+
+   #+BEGIN_exe
+   Dans une classe de 1\up{ère} STMG il y a 12 filles pour 18
+   garçons. Parmi les 12 filles 7 aiment faire du shopping.
+   La proportion des filles qui aiment faire du shopping dans cette
+   classe est : $p = p_1p_2 = \dfrac{7}{12}\times \dfrac{12}{30} =
+   \dfrac{7}{30} \simeq$ 23%
+   #+END_exe
+
+   #+BEGIN_defi
+   Dans cette même classe, parmi les 18 garçons, 12 aiment jouer au
+   foot. Quelle est la proportion des garçons de la classe qui aiment
+   jouer au foot ?
+   #+END_defi
+
+* Exercices et compléments
+** Déterminer une proportion 
+
+   #+BEGIN_exo
+   Dans un groupe de geeks, 55% jouent aux jeux vidéos, 27% sont des
+   cryptos-traders, 15% pratiquent les deux activités. Déterminer la
+   part de ce qui pratiquent l'une ou l'autre.
+   #+END_exo
+   
+   #+BEGIN_sol
+   Soit E l'ensemble du groupe de geeks. A est la sous-population
+   composée de ceux qui jouent aux jeux vidéos et B celle de ceux qui
+   sont cryptos-traders. Alors $p_A = 0,55$ et $p_B =
+   0,27$.
+
+   $A\cap B$ représente ceux qui font les deux : $p_{A\cap B} =
+   0,15$. 
+
+   Comme $p_{A\cup B} = p_A + p_B - p_{A\cap B}$ alors p_{A\cup B}
+   = 0,55 + 0,27 - 0,15 = 0,67
+
+   On peut conclure que 67% des membres de ce groupe de geeks joue aux
+   jeux vidéos ou fait du crypto-trading.
+   #+END_sol
+
+** Déterminer une proportion lors de deux inclusions successives
+
+   #+BEGIN_exo
+   En France en 2013, sur 66 millions d'habitants, 66% sont en âge de
+   travailler (ce sont les 15-64 ans). La population active représente
+   70% de la population en âge de travailler. Calculer la proportion
+   de la population active par rapport à la population totale.
+   #+END_exo
+
+   #+BEGIN_sol
+   La population E de référence est la population française, $n_E =
+   66\times 10^6$.
+
+   La sous-population B est la population en âge de travailler, $p_1 =
+   \dfrac{66}{100}$. La sous-population A est la population active,
+   $p_2 = \dfrac{70}{100}$. On a $A\subset B\subset E$. La proportion
+   de la population active est : p =
+   \dfrac{70}{100}\times\dfrac{66}{100} = 0,462 = 46,2%
+   #+END_sol
